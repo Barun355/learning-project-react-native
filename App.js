@@ -1,11 +1,12 @@
-import { View } from "react-native";
+import { View, Text } from "react-native";
 
 
 export default function App(){
   return (
-    <View style={{backgroundColor: "plumb", flex: 1}}>
-      <View style={{backgroundColor: "lightblue", width: 200, height: 200, margin: 10}}></View>
-      <View style={{backgroundColor: "lightgreen", width: 200, height: 200, margin: 10}}></View>
+    <View style={{backgroundColor: "plumb", flex: 1, padding: 60}}>
+      <Text>
+        <Text style={{color: "blue"}}>Nested</Text> Text
+      </Text>
     </View>
   )
 }
