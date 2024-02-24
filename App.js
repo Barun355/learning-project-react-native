@@ -1,15 +1,19 @@
 import { useState } from "react";
-import { View, StatusBar, Button } from "react-native";
+import { View, ActivityIndicator, Button } from "react-native";
 
 
 export default function App() {
+  
+  const [isActivityIndicatorLoading, setIsActivityIndicatorLoading] = useState(false)
 
-  const [isStatusBarVisible, setIsStatusBarVisible] = useState(true)
 
   return (
     <View style={{ backgroundColor: "plumb", flex: 1, padding: 60 }}>
-      <Button title="Status Bar Toggle" onPress={() => setIsStatusBarVisible(prev => !prev)} />
-      <StatusBar backgroundColor="lightgreen" barStyle="dark-content" hidden={isStatusBarVisible} />
+      <Button title="Start Loading" onPress={() => setIsActivityIndicatorLoading(prev => !prev)} />
+      <ActivityIndicator size="small" />
+      <ActivityIndicator size="large" />
+      <ActivityIndicator size="large" color="midnightblue" />
+      <ActivityIndicator size="large" color="midnightblue" animating={isActivityIndicatorLoading} />
     </View>
   )
 }
